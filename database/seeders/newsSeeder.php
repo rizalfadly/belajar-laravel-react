@@ -16,13 +16,6 @@ class newsSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i <= 20; $i++){
-            DB::table('news')->insert([
-                'title' => fake()->title(),
-                'description' => fake()->paragraph(3, true),
-                'category' => fake()->sentence(),
-                'author' => fake()->email(),
-            ]);
-        }
+      news::factory()->count(30)->create();
     }
 }
